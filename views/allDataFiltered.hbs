@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{title}}</title>
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    th {
+      background-color: #f4f4f4;
+      font-weight: bold;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>{{title}}</h2>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Movie ID</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Director</th>
+            <th>Metascore</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each movies}}
+            {{#hasMetascore Metascore}}
+            <tr>
+              <td>{{Movie_ID}}</td>
+              <td>{{Title}}</td>
+              <td>{{Year}}</td>
+              <td>{{Genre}}</td>
+              <td>{{Director}}</td>
+              <td>{{Metascore}}</td>
+            </tr>
+            {{/hasMetascore}}
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

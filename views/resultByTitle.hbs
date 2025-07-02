@@ -1,0 +1,20 @@
+<h2>Search Results for "{{searchTitle}}"</h2>
+
+{{#if results.length}}
+  <ul>
+    {{#each results}}
+      <li>
+        <strong>Movie ID:</strong> {{Movie_ID}} <br>
+        <strong>Title:</strong> {{Title}} <br>
+        <strong>Genre:</strong> {{Genre}} <br>
+        <strong>Director:</strong> {{Director}} <br>
+        <strong>Year:</strong> {{Year}} <br>
+      </li>
+      <hr>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No movies found.</p>
+{{/if}}
+
+<a href="/search/title">Search Again</a>
